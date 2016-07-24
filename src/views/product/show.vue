@@ -21,7 +21,7 @@
   export default {
 
     ready () {
-      this.fetch()
+      this.fetch();
     },
 
     data () {
@@ -29,15 +29,15 @@
         product: {
           id: this.$route.params.id
         }
-      }
+      };
     },
 
     methods: {
       fetch () {
         this.$resource('http://larakommerce.app/api/products/' + this.product.id).get().then(function (res) {
-          this.product = res.data[0]
-        })
+          this.product = res.data[0];
+        });
       }
     }
-  }
+  };
 </script>

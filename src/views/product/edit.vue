@@ -167,8 +167,8 @@
     computed: {},
 
     ready () {
-      this.resource = this.$resource('http://larakommerce.app/api/products{/id}')
-      this.fetch()
+      this.resource = this.$resource('http://larakommerce.app/api/products{/id}');
+      this.fetch();
     },
 
     data () {
@@ -177,14 +177,14 @@
         product: {
           id: this.$route.params.id
         }
-      }
+      };
     },
 
     methods: {
       fetch () {
         this.resource.get({id: this.product.id}).then(function (response) {
-          this.product = response.data[0]
-        })
+          this.product = response.data[0];
+        });
       },
 
       submit () {
@@ -201,15 +201,20 @@
           isTaxable: this.product.isTaxable,
           isShippable: this.product.isShippable,
           areAttachmentsEnabled: this.product.areAttachmentsEnabled
-        }
+        };
 
         this.resource.update({id: this.product.id}, data).then(function (response) {
-          this.$router.go({ name: 'product.show', params: {id: this.product.id} })
+          this.$router.go({
+            name: 'product.show',
+            params: {
+              id: this.product.id
+            }
+          });
         }, function (response) {
-          console.log('fail', response)
-        })
+          console.log('fail', response);
+        });
       }
 
     }
-  }
+  };
 </script>

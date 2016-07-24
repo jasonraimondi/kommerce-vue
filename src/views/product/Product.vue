@@ -6,13 +6,11 @@
 </template>
 
 <script>
-  import Breadcrumbs from '../layout/components/breadcrumbs.vue'
-  import ProductSearch from '../layout/components/search.vue'
+  import ProductSearch from '../layout/components/search.vue';
 
-  export default{
+  export default {
     components: {
-      ProductSearch,
-      Breadcrumbs
+      ProductSearch
     }
-  }
+  };
 </script>

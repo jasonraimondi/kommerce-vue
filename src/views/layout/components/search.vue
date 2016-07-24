@@ -22,7 +22,7 @@
 </template>
 
 <script>
-  import VueTypeahead from 'vue-typeahead'
+  import VueTypeahead from 'vue-typeahead';
 
   export default {
 
@@ -34,24 +34,24 @@
         src: 'http://larakommerce.app/api/products',
         limit: 15,
         minChars: 3
-      }
+      };
     },
 
     methods: {
 
       goToPage (item) {
-        this.$router.go({name: 'product.show', params: {id: item.id}})
+        this.$router.go({name: 'product.show', params: {id: item.id}});
       },
 
       onHit (item) {
-        console.log(item)
+        console.log(item);
       }
 
     }
-  }
+  };
 </script>
 
-<style>
+<style lang="scss">
   .lk-typeahead-form {
     margin: 0;
   }
@@ -63,16 +63,16 @@
     margin: 0;
     padding: 0;
     border-bottom: 1px solid #e6e6e6;
-  }
 
-  .lk-typeahead-results li {
-    margin: 0;
-    padding: 0;
-    color: inherit;
-  }
+    li {
+      margin: 0;
+      padding: 0;
+      color: inherit;
 
-  .lk-typeahead-results li:hover {
-    background-color: #e6e6e6;
+      &:hover {
+        background-color: #e6e6e6;
+      }
+    }
   }
 
 </style>

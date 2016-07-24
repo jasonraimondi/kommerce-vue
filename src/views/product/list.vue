@@ -37,23 +37,23 @@
           'isShippable': true,
           'areAttachmentsEnabled': false
         }
-      }
+      };
     },
 
     methods: {
 
       fetch () {
         this.$resource('http://larakommerce.app/api/products').get().then(function (res) {
-          this.products = res.data
-        })
+          this.products = res.data;
+        });
       }
 
     },
 
     route: {
       data () {
-        this.fetch()
+        this.fetch();
       }
     }
-  }
+  };
 </script>
