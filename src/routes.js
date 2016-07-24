@@ -16,23 +16,23 @@ var router = new VueRouter({
 router.map({
   '/dashboard': {
     name: 'dashboard',
-    component: DashboardPage
+    component: Vue.component('DashboardPage', DashboardPage)
   },
   '/product': {
     name: 'product',
-    component: Product,
+    component: Vue.component('Product', Product),
     subRoutes: {
       '/': {
         name: 'product.list',
-        component: ProductList
+        component: Vue.component('ProductList', ProductList)
       },
       '/:id': {
         name: 'product.show',
-        component: ProductShow
+        component: Vue.component('ProductShow', ProductShow)
       },
       '/:id/edit': {
         name: 'product.edit',
-        component: ProductEdit
+        component: Vue.component('ProductEdit', ProductEdit)
       }
     }
   }
@@ -42,4 +42,5 @@ router.alias({
   '': '/dashboard'
 })
 
-export default router
+export
+default router

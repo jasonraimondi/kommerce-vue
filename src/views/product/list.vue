@@ -1,8 +1,6 @@
 <template>
 
   <article>
-
-
     <div class="row lk-list-product-header hide-for-small-only">
       <div class="medium-3 columns" v-for="(name, showTitle) in show" v-if="showTitle">
         <span class="lk-list-product-title">{{ name }}</span>

@@ -1,23 +1,25 @@
 <template>
 
-  <div class="lk-wrapper">
-    <side-bar></side-bar>
-    <section class="lk-content">
-      <router-view></router-view>
-    </section>
-  </div>
+  <article>
+    <top-bar></top-bar>
+
+    <div class="lk-wrapper">
+      <side-bar></side-bar>
+      <section class="lk-content">
+        <router-view></router-view>
+      </section>
+    </div>
+  </article>
 
 </template>
 
 <script>
-  import store from '../../vuex/store.js'
   import SideBar from './components/sidebar.vue'
+  import TopBar from './components/topbar.vue'
 
-  export default{
+  export default {
     components: {
-      SideBar
-    },
-    store
+      SideBar, TopBar
+    }
   }
-
 </script>

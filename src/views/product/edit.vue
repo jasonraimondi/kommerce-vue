@@ -167,7 +167,7 @@
     computed: {},
 
     ready () {
-      this.resource = this.$resource('http://larakommerce.app/api/products{/id}{/edit}')
+      this.resource = this.$resource('http://larakommerce.app/api/products{/id}')
       this.fetch()
     },
 
@@ -181,9 +181,8 @@
     },
 
     methods: {
-
       fetch () {
-        this.resource.get({id: this.product.id}).then((response) => {
+        this.resource.get({id: this.product.id}).then(function (response) {
           this.product = response.data[0]
         })
       },
@@ -204,12 +203,13 @@
           areAttachmentsEnabled: this.product.areAttachmentsEnabled
         }
 
-        this.resource.update({id: this.product.id}, data).then((response) => {
+        this.resource.update({id: this.product.id}, data).then(function (response) {
           this.$router.go({ name: 'product.show', params: {id: this.product.id} })
-        }, (response) => {
+        }, function (response) {
           console.log('fail', response)
         })
       }
+
     }
   }
 </script>

@@ -31,19 +31,22 @@
     data () {
       return {
         query: '',
-        src: '/api/products',
+        src: 'http://larakommerce.app/api/products',
         limit: 15,
         minChars: 3
       }
     },
 
     methods: {
+
       goToPage (item) {
         this.$router.go({name: 'product.show', params: {id: item.id}})
       },
+
       onHit (item) {
-        console.log('onHit', item)
+        console.log(item)
       }
+
     }
   }
 </script>
@@ -55,7 +58,6 @@
 
   .lk-typeahead-results {
     width: 100%;
-    position: fixed;
     background-color: white;
     list-style-type: none;
     margin: 0;

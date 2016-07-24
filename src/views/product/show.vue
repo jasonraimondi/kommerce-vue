@@ -13,18 +13,15 @@
         {{ value }}
       </li>
     </ul>
-
   </article>
 
 </template>
 
 <script>
-  import { fetchProduct } from '../../vuex/actions.js'
-
   export default {
 
     ready () {
-      this.getProducts()
+      this.fetch()
     },
 
     data () {
@@ -36,18 +33,11 @@
     },
 
     methods: {
-//      getProducts() {
-//        this.$resource('/api/products/' + this.product.id).get().then(function (res) {
-//          this.product = res.data[0];
-//        });
-//      },
-    },
-
-    vuex: {
-      actions: {
-        fetch: fetchProduct
+      fetch () {
+        this.$resource('http://larakommerce.app/api/products/' + this.product.id).get().then(function (res) {
+          this.product = res.data[0]
+        })
       }
     }
-
   }
 </script>
