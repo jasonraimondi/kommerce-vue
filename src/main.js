@@ -1,12 +1,14 @@
+import './sass/app.scss';
+
 import Vue from 'vue';
 import VueResource from 'vue-resource';
-
-import MainLayout from './views/layout/default';
-import router from './routes';
+import App from './App.vue';
+import router from './router.js';
+import store from './vuex/store.js';
+import { sync } from 'vuex-router-sync';
 
 Vue.use(VueResource);
-// Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name=csrf-token]').getAttribute('content')
 
-router.start(MainLayout, '#lk-app');
+sync(store, router);
 
-import './sass/app.scss';
+router.start(App, '#lk-app');

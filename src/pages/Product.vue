@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import ProductSearch from '../layout/components/search.vue';
+  import ProductSearch from '../components/ProductSearch.vue';
 
   export default {
     components: {
