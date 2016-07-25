@@ -1,25 +1,9 @@
-import {
-  RECEIVE_PRODUCTS,
-  ADD_TO_CART
-} from '../mutation-types';
+import shop from '../../api/products.js'
 
-// initial state
-const state = {
-  all: []
-};
+import { RECEIVE_PRODUCTS } from '../mutation-types.js'
 
-// mutations
-const mutations = {
-  [RECEIVE_PRODUCTS] (state, products) {
-    state.all = products;
-  },
-
-  [ADD_TO_CART] (state, productId) {
-    state.all.find(p => p.id === productId).inventory--;
-  }
-};
-
-export default {
-  state,
-  mutations
-};
+export const getAllProducts = ({ dispatch }) => {
+  shop.getProducts(products => {
+    dispatch(RECEIVE_PRODUCTS, products)
+  })
+}

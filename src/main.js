@@ -1,14 +1,14 @@
-import './sass/app.scss';
+import './sass/app.scss'
 
-import Vue from 'vue';
-import VueResource from 'vue-resource';
-import App from './App.vue';
-import router from './router.js';
-import store from './vuex/store.js';
-import { sync } from 'vuex-router-sync';
+import Vue from 'vue'
+import VueResource from 'vue-resource'
+import App from './App.vue'
+import router from './router.js'
+// import store from './vuex/store.js'
+// import { sync } from 'vuex-router-sync'
 
-Vue.use(VueResource);
+Vue.use(VueResource)
 
-sync(store, router);
+// sync(store, router)
 
-router.start(App, '#lk-app');
+router.start(App, '#lk-app')

@@ -14,15 +14,15 @@
 
     <!-- the list -->
     <ul v-show="hasItems" class="lk-typeahead-results">
-      <li v-for="item in items" :class="activeClass($index)">
-        <a v-link="{ name: 'product.show', params: {id: item.id} }">{{ item.name }}</a>
+      <li v-for="item in items" :class="activeClass($index)" v-link="{ name: 'product.show', params: {id: item.id} }">
+        <a>{{ item.name }}</a>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-  import VueTypeahead from 'vue-typeahead';
+  import VueTypeahead from 'vue-typeahead'
 
   export default {
 
@@ -34,21 +34,20 @@
         src: 'http://larakommerce.app/api/products',
         limit: 15,
         minChars: 3
-      };
+      }
     },
 
     methods: {
 
       goToPage (item) {
-        this.$router.go({name: 'product.show', params: {id: item.id}});
+        this.$router.go({name: 'product.show', params: {id: item.id}})
       },
 
       onHit (item) {
-        console.log(item);
+        console.log(item)
       }
-
     }
-  };
+  }
 </script>
 
 <style lang="scss">
@@ -74,5 +73,4 @@
       }
     }
   }
-
 </style>

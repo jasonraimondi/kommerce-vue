@@ -1,16 +1,16 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
-import DashboardPage from './pages/dashboard/index.vue';
-import Product from './pages/Product.vue';
-import ProductList from './pages/product/list.vue';
-import ProductShow from './pages/product/show.vue';
-import ProductEdit from './pages/product/edit.vue';
+import DashboardPage from './pages/dashboard/index.vue'
+import Product from './pages/Product.vue'
+import ProductList from './pages/product/list.vue'
+import ProductShow from './pages/product/show.vue'
+import ProductEdit from './pages/product/edit.vue'
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 var router = new VueRouter({
   history: false
-});
+})
 
 router.map({
   '/dashboard': {
@@ -35,10 +35,10 @@ router.map({
       }
     }
   }
-});
+})
 
-// router.alias({
-//   '': '/dashboard'
-// });
+router.alias({
+  '': '/dashboard'
+})
 
-export default router;
+export default router

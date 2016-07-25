@@ -2,7 +2,7 @@
 
   <article>
     <h1>
-      <a v-link="{ name: 'product' }">&laquo;</a>
+      <a v-link="{ name: 'product' }">&laquo</a>
       {{ product.name }}
       <a v-if="product.id" v-link="{ name: 'product.edit',  params: { id: product.id }}">Edit</a>
     </h1>
@@ -21,23 +21,22 @@
   export default {
 
     ready () {
-      this.fetch();
+      this.fetch()
     },
-
     data () {
       return {
         product: {
           id: this.$route.params.id
         }
-      };
+      }
     },
 
     methods: {
       fetch () {
         this.$resource('http://larakommerce.app/api/products/' + this.product.id).get().then(function (res) {
-          this.product = res.data[0];
-        });
+          this.product = res.data[0]
+        })
       }
     }
-  };
+  }
 </script>
