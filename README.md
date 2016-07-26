@@ -24,4 +24,13 @@ npm run e2e
 npm test
 ```
 
+
+Place a `config.js` file in the root of your `src` directory.
+```javascript
+export const API_ROOT = (process.env.NODE_ENV === 'production')
+    ? 'http://larakommerce.app/api/'
+    : 'http://larakommerce.app/api/'
+```
+
+
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
