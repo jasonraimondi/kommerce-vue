@@ -20,6 +20,8 @@
 <script>
   export default {
 
+    name: 'ProductShow',
+
     ready () {
       this.fetch()
     },

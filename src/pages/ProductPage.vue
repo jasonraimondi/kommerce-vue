@@ -13,8 +13,11 @@
   import { getProducts } from '../vuex/products/getters.js'
 
   export default {
-    ready () {
-      allProducts
+
+    name: 'ProductPage',
+
+    attached () {
+      this.allProducts;
     },
     components: {
       ProductSearch

@@ -164,6 +164,8 @@
 <script>
   export default {
 
+    name: 'ProductEdit',
+
     computed: {},
 
     ready () {

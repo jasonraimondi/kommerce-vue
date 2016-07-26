@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import DashboardPage from './pages/dashboard/index.vue'
-import Product from './pages/Product.vue'
+import ProductPage from './pages/ProductPage.vue'
 import ProductList from './pages/product/list.vue'
 import ProductShow from './pages/product/show.vue'
 import ProductEdit from './pages/product/edit.vue'
@@ -15,23 +15,23 @@ var router = new VueRouter({
 router.map({
   '/dashboard': {
     name: 'dashboard',
-    component: Vue.component('DashboardPage', DashboardPage)
+    component: DashboardPage
   },
   '/product': {
     name: 'product',
-    component: Vue.component('Product', Product),
+    component: ProductPage,
     subRoutes: {
       '/': {
         name: 'product.list',
-        component: Vue.component('ProductList', ProductList)
+        component: ProductList
       },
       '/:id': {
         name: 'product.show',
-        component: Vue.component('ProductShow', ProductShow)
+        component: ProductShow
       },
       '/:id/edit': {
         name: 'product.edit',
-        component: Vue.component('ProductEdit', ProductEdit)
+        component: ProductEdit
       }
     }
   }
