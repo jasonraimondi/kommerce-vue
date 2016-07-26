@@ -18,6 +18,9 @@
   import { getAllProducts } from '../vuex/products/actions.js'
 
   export default {
+    ready () {
+      this.getProducts()
+    },
     vuex: {
       actions: {
         getProducts: getAllProducts

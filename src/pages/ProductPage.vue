@@ -13,18 +13,13 @@
   import { getProducts } from '../vuex/products/getters.js'
 
   export default {
-
     name: 'ProductPage',
 
-    attached () {
-      this.allProducts;
-    },
     components: {
       ProductSearch
     },
     vuex: {
       getters: {
-        // note that you're passing the function itself, and not the value 'getProducts()'
         allProducts: getProducts
       }
     }
