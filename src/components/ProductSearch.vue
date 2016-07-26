@@ -30,10 +30,10 @@
 
     data () {
       return {
-        query: '',
-        src: 'http://larakommerce.app/api/products',
+        src: '//larakommerce.app/api/products',
         limit: 15,
-        minChars: 3
+        minChars: 3,
+        queryParamName: 'q'
       }
     },
 

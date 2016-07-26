@@ -17,10 +17,10 @@
 <script>
   import SideBar from './components/SideBar.vue'
   import TopBar from './components/TopBar.vue'
-//  import store from './vuex/store.js'
+  import store from './vuex/store.js'
 
   export default {
-//    store,
+    store,
     components: {
       SideBar, TopBar
     }
